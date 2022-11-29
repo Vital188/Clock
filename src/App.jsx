@@ -5,7 +5,7 @@ import './App.css';
 function App() {
 
 
-  const [hour, setHour] = useState(12);
+  const [hour, setHour] = useState(1);
   const [minute, setMinute] = useState(0);
   const [angle, setAngle] = useState('')
 
@@ -17,19 +17,27 @@ function App() {
   };
 
   const handleChange = () => {
-    setHour(12);
+    setHour(1);
     setMinute(0);
+    setAngle(0)
   }
 
 const minuteDegree = minute * 6;
 const hourDegree = hour * 30;
 
-useEffect (() => {
-  if (minuteDegree > hourDegree) {
-    setAngle(minuteDegree - hourDegree)
-  }
-  else { setAngle(hourDegree - minuteDegree)}
-}, [minuteDegree, hourDegree]);
+const handleCalculation = () => {
+  setAngle(minuteDegree - hourDegree)
+}
+
+// useEffect (() => {
+//   if (angle > 180 || angle < 0 ) {
+//     setAngle(hourDegree - minuteDegree)
+//   }
+// }, [angle, hourDegree, minuteDegree]);
+
+
+
+console.log(minuteDegree, hourDegree)
 
   return (
     <div className="App">
@@ -51,7 +59,7 @@ useEffect (() => {
         onChange={e => setMinute(e.target.value)}
          />
         <button onClick={handleChange}>Drop the time</button>
-        <button>Calculate angle</button>
+        <button onClick={handleCalculation}>Calculate angle</button>
         </div>
       <div className='clock'>
       <div className='hour' style={hoursStyle}></div>
@@ -69,10 +77,13 @@ useEffect (() => {
       <div className='number number10'>10</div>
       <div className='number number11'>11</div>
       <div className='number number12'>12</div>
-      </div>
       
+      </div>
+      <div className='boxfortext'>
+      <p> The lesser angle in degrees between hours arrow and minutes arrow is <b> {angle}</b></p>
+      </div>
       </header>
-      <p> The lesser angle in degrees between hours arrow and minutes arrow is {angle}</p>
+      
     </div>
   );
 }
