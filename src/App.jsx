@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -7,6 +7,7 @@ function App() {
 
   const [hour, setHour] = useState(12);
   const [minute, setMinute] = useState(0);
+  const [angle, setAngle] = useState('')
 
   const minutesStyle = {
     transform: `rotate(${minute * 6}deg)`
@@ -19,6 +20,16 @@ function App() {
     setHour(12);
     setMinute(0);
   }
+
+const minuteDegree = minute * 6;
+const hourDegree = hour * 30;
+
+useEffect (() => {
+  if (minuteDegree > hourDegree) {
+    setAngle(minuteDegree - hourDegree)
+  }
+  else { setAngle(hourDegree - minuteDegree)}
+}, [minuteDegree, hourDegree]);
 
   return (
     <div className="App">
@@ -59,7 +70,9 @@ function App() {
       <div className='number number11'>11</div>
       <div className='number number12'>12</div>
       </div>
+      
       </header>
+      <p> The lesser angle in degrees between hours arrow and minutes arrow is {angle}</p>
     </div>
   );
 }
