@@ -38,19 +38,11 @@ input {
 }
 
 .clock .number {
-  transform: rotate(0deg);
   position:absolute;
   width: 100%;
   height: 100%;
   color: black;
-  transform: rotate(var(rotate));
 }
-
-/* .line {
-  width: 25px;
-  height: 5px;
-  background-color: rgb(8, 8, 111);
-} */
 
 .clock .number1 {
   transform: rotate(30deg);
@@ -140,3 +132,16 @@ input {
   margin-top: 10px;
 }
 
+.verification {
+  width: 200px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: relative;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 200px;
+  left: 220px;
+}
