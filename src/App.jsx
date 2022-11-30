@@ -29,13 +29,17 @@ const handleCalculation = () => {
   setAngle(minuteDegree - hourDegree)
 }
 
-// useEffect (() => {
-//   if (angle > 180 || angle < 0 ) {
-//     setAngle(hourDegree - minuteDegree)
-//   }
-// }, [angle, hourDegree, minuteDegree]);
+useEffect (() => {
+  if (hourDegree > minuteDegree ) {
+    setAngle(hourDegree - minuteDegree)
+  }
+}, [angle, hourDegree, minuteDegree]);
 
-
+useEffect (() => {
+  if (angle > 180 ) {
+    setAngle(360 - angle)
+  }
+}, [angle]);
 
 console.log(minuteDegree, hourDegree)
 
@@ -65,18 +69,90 @@ console.log(minuteDegree, hourDegree)
       <div className='hour' style={hoursStyle}></div>
       <div className='center'></div>
       <div className='minute' style={minutesStyle}></div>
-      <div className='number number1'>1</div>
-      <div className='number number2'>2</div>
-      <div className='number number3'>3</div>
-      <div className='number number4'>4</div>
-      <div className='number number5'>5</div>
-      <div className='number number6'>6</div>
-      <div className='number number7'>7</div>
-      <div className='number number8'>8</div>
-      <div className='number number9'>9</div>
-      <div className='number number10'>10</div>
-      <div className='number number11'>11</div>
-      <div className='number number12'>12</div>
+      <div className='number number1'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number2 line'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number3'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number4'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number5'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number6'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number7'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number8'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number9'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number10'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number11'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
+      <div className='number number12'><button style={{
+        border: 'none',
+        height: '30px',
+        backgroundColor: 'black',
+        padding: '4px',
+        marginTop: '2px'
+      }}></button></div>
       
       </div>
       <div className='boxfortext'>
